@@ -1,0 +1,14 @@
+org/apache/nifi/processors/email/ExtractEmailAttachments$1$1.class
+org/apache/nifi/processors/email/ExtractEmailAttachments$1.class
+org/apache/nifi/processors/email/ExtractTNEFAttachments.class
+org/apache/nifi/processors/email/ExtractEmailHeaders$1.class
+org/apache/nifi/processors/email/ConsumePOP3.class
+org/apache/nifi/processors/email/ExtractTNEFAttachments$1.class
+org/apache/nifi/processors/email/AbstractEmailProcessor.class
+org/apache/nifi/processors/email/ListenSMTP.class
+org/apache/nifi/processors/email/ConsumeIMAP.class
+org/apache/nifi/processors/email/ExtractTNEFAttachments$1$1.class
+org/apache/nifi/processors/email/smtp/SmtpConsumer.class
+org/apache/nifi/processors/email/ListenSMTP$1.class
+org/apache/nifi/processors/email/ExtractEmailAttachments.class
+org/apache/nifi/processors/email/ExtractEmailHeaders.class

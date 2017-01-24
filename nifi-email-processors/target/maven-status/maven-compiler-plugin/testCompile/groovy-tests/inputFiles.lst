@@ -1,0 +1,6 @@
+/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/GenerateAttachment.java
+/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/TestExtractTNEFAttachments.java
+/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/TestExtractEmailHeaders.java
+/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/TestExtractEmailAttachments.java
+/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/TestListenSMTP.java
+/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/TestConsumeEmail.java

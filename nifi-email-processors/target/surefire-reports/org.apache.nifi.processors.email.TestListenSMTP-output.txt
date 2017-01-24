@@ -1,0 +1,60 @@
+[pool-6-thread-1] INFO org.subethamail.smtp.server.SMTPServer - SMTP server *:60891 starting
+[org.subethamail.smtp.server.ServerThread *:60891] INFO org.subethamail.smtp.server.ServerThread - SMTP server *:60891 started
+[pool-9-thread-1] INFO org.subethamail.smtp.server.SMTPServer - SMTP server *:49722 starting
+[org.subethamail.smtp.server.ServerThread *:49722] INFO org.subethamail.smtp.server.ServerThread - SMTP server *:49722 started
+[pool-12-thread-1] INFO org.subethamail.smtp.server.SMTPServer - SMTP server *:45636 starting
+[org.subethamail.smtp.server.ServerThread *:45636] INFO org.subethamail.smtp.server.ServerThread - SMTP server *:45636 started
+[org.subethamail.smtp.server.Session-/127.0.0.1:56865] ERROR org.apache.nifi.processors.email.ListenSMTP - [ListenSMTP[id=4273b456-2b03-4c92-9f6a-190792d4797c]] Unable to fully process input due to Maximum message size limit reached - client must send smaller messages
+org.subethamail.smtp.TooMuchDataException: Maximum message size limit reached - client must send smaller messages
+	at org.apache.nifi.processors.email.smtp.SmtpConsumer.data(SmtpConsumer.java:109)
+	at org.subethamail.smtp.command.DataCommand.execute(DataCommand.java:64)
+	at org.subethamail.smtp.server.RequireTLSCommandWrapper.execute(RequireTLSCommandWrapper.java:30)
+	at org.subethamail.smtp.server.CommandHandler.handleCommand(CommandHandler.java:99)
+	at org.subethamail.smtp.server.Session.runCommandLoop(Session.java:244)
+	at org.subethamail.smtp.server.Session.run(Session.java:145)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[org.subethamail.smtp.server.Session-/127.0.0.1:56865] WARN org.subethamail.smtp.server.Session - Exception during SMTP transaction
+org.subethamail.smtp.TooMuchDataException: Maximum message size limit reached - client must send smaller messages
+	at org.apache.nifi.processors.email.smtp.SmtpConsumer.data(SmtpConsumer.java:109)
+	at org.subethamail.smtp.command.DataCommand.execute(DataCommand.java:64)
+	at org.subethamail.smtp.server.RequireTLSCommandWrapper.execute(RequireTLSCommandWrapper.java:30)
+	at org.subethamail.smtp.server.CommandHandler.handleCommand(CommandHandler.java:99)
+	at org.subethamail.smtp.server.Session.runCommandLoop(Session.java:244)
+	at org.subethamail.smtp.server.Session.run(Session.java:145)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+org.apache.commons.mail.EmailException: Sending the email to the following server failed : localhost:45636
+	at org.apache.commons.mail.Email.sendMimeMessage(Email.java:1421)
+	at org.apache.commons.mail.Email.send(Email.java:1448)
+	at org.apache.nifi.processors.email.TestListenSMTP$3.run(TestListenSMTP.java:190)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.mail.MessagingException: Exception reading response;
+  nested exception is:
+	java.net.SocketException: Connection reset
+	at com.sun.mail.smtp.SMTPTransport.readServerResponse(SMTPTransport.java:2369)
+	at com.sun.mail.smtp.SMTPTransport.issueCommand(SMTPTransport.java:2231)
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2264)
+	at com.sun.mail.smtp.SMTPTransport.finishData(SMTPTransport.java:2045)
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1260)
+	at javax.mail.Transport.send0(Transport.java:255)
+	at javax.mail.Transport.send(Transport.java:124)
+	at org.apache.commons.mail.Email.sendMimeMessage(Email.java:1411)
+	... 9 more
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:209)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.sun.mail.util.TraceInputStream.read(TraceInputStream.java:124)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at com.sun.mail.util.LineInputStream.readLine(LineInputStream.java:92)
+	at com.sun.mail.smtp.SMTPTransport.readServerResponse(SMTPTransport.java:2349)
+	... 16 more
