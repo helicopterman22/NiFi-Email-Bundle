@@ -1,6 +1,7 @@
-/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/GenerateAttachment.java
-/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/TestExtractTNEFAttachments.java
-/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/TestExtractEmailHeaders.java
-/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/TestExtractEmailAttachments.java
-/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/TestListenSMTP.java
-/home/dave/workspace-luna/nifi-email-bundle/nifi-email-processors/src/test/java/org/apache/nifi/processors/email/TestConsumeEmail.java
+D:\NiFi\NiFi_Workspace\nifi-email-0-7-1-J7\nifi-email-processors\src\test\java\org\apache\nifi\processors\email\GenerateAttachment.java
+D:\NiFi\NiFi_Workspace\nifi-email-0-7-1-J7\nifi-email-processors\src\test\java\org\apache\nifi\processors\email\TestExtractTNEFAttachments.java
+D:\NiFi\NiFi_Workspace\nifi-email-0-7-1-J7\nifi-email-processors\src\test\java\org\apache\nifi\processors\email\TestExtractEmailAttachments.java
+D:\NiFi\NiFi_Workspace\nifi-email-0-7-1-J7\nifi-email-processors\src\test\java\org\apache\nifi\remote\io\socket\NetworkUtils.java
+D:\NiFi\NiFi_Workspace\nifi-email-0-7-1-J7\nifi-email-processors\src\test\java\org\apache\nifi\processors\email\TestListenSMTP.java
+D:\NiFi\NiFi_Workspace\nifi-email-0-7-1-J7\nifi-email-processors\src\test\java\org\apache\nifi\processors\email\TestConsumeEmail.java
+D:\NiFi\NiFi_Workspace\nifi-email-0-7-1-J7\nifi-email-processors\src\test\java\org\apache\nifi\processors\email\TestExtractEmailHeaders.java

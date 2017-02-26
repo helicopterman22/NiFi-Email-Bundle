@@ -31,6 +31,8 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import javax.mail.MessagingException;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.nifi.flowfile.FlowFile;
 import org.apache.nifi.flowfile.attributes.CoreAttributes;
@@ -38,6 +40,7 @@ import org.apache.nifi.logging.ComponentLog;
 import org.apache.nifi.processor.ProcessSession;
 import org.apache.nifi.processor.ProcessSessionFactory;
 import org.apache.nifi.processor.exception.FlowFileAccessException;
+import org.apache.nifi.processor.io.OutputStreamCallback;
 import org.apache.nifi.processors.email.ListenSMTP;
 import org.apache.nifi.stream.io.LimitingInputStream;
 import org.apache.nifi.util.StopWatch;
@@ -96,7 +99,7 @@ public class SmtpConsumer implements MessageHandler {
         final StopWatch watch = new StopWatch();
         watch.start();
         try {
-            FlowFile flowFile = processSession.create();
+         /*   FlowFile flowFile = processSession.create();
             final AtomicBoolean limitExceeded = new AtomicBoolean(false);
             flowFile = processSession.write(flowFile, (OutputStream out) -> {
                 final LimitingInputStream lis = new LimitingInputStream(data, maxMessageSize);
@@ -105,6 +108,25 @@ public class SmtpConsumer implements MessageHandler {
                     limitExceeded.set(true);
                 }
             });
+            */
+        	
+        	FlowFile flowFile = processSession.create();
+            final AtomicBoolean limitExceeded = new AtomicBoolean(false);
+            flowFile = processSession.write(flowFile, new OutputStreamCallback() {
+                @Override
+                public void process(final OutputStream out) throws IOException {
+                	
+                	 final LimitingInputStream lis = new LimitingInputStream(data, maxMessageSize);
+                     IOUtils.copy(lis, out);
+                     if (lis.getLimit() < maxMessageSize){
+                   //  if (lis.hasReachedLimit()) {
+                         limitExceeded.set(true);
+                     }
+                	 
+                }			
+            });
+
+            
             if (limitExceeded.get()) {
                 throw new TooMuchDataException("Maximum message size limit reached - client must send smaller messages");
             }

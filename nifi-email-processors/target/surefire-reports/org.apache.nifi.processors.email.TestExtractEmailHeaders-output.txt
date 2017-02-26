@@ -1,3 +1,0 @@
-[pool-14-thread-1] INFO org.apache.nifi.processors.email.ExtractEmailHeaders - ExtractEmailHeaders[id=dd50ce32-eb8d-4533-a156-6116fd4d809d] Extracted 6 into FlowFile[0,982123971937.mockFlowFile,5202B] files
-[pool-15-thread-1] INFO org.apache.nifi.processors.email.ExtractEmailHeaders - ExtractEmailHeaders[id=f7769668-b837-440f-a116-500cca9c20e9] Extracted 7 into FlowFile[0,982157033376.mockFlowFile,308B] files
-[pool-16-thread-1] ERROR org.apache.nifi.processors.email.ExtractEmailHeaders - ExtractEmailHeaders[id=2badde53-662c-48bf-a286-b9ce26b5da7b] Could not parse the flowfile FlowFile[0,982159901455.mockFlowFile,24B] as an email, treating as failure: javax.mail.MessagingException: Message failed RFC2822 validation

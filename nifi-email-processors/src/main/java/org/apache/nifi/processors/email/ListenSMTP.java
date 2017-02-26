@@ -53,6 +53,7 @@ import org.apache.nifi.processors.email.smtp.SmtpConsumer;
 import org.apache.nifi.ssl.SSLContextService;
 import org.springframework.util.StringUtils;
 import org.subethamail.smtp.MessageContext;
+import org.subethamail.smtp.MessageHandler;
 import org.subethamail.smtp.MessageHandlerFactory;
 import org.subethamail.smtp.server.SMTPServer;
 
@@ -234,9 +235,17 @@ public class ListenSMTP extends AbstractSessionFactoryProcessor {
         final ComponentLog log = getLogger();
         final int maxMessageSize = context.getProperty(SMTP_MAXIMUM_MSG_SIZE).asDataSize(DataUnit.B).intValue();
         //create message handler factory
-        final MessageHandlerFactory messageHandlerFactory = (final MessageContext mc) -> {
-            return new SmtpConsumer(mc, sessionFactory, port, host, log, maxMessageSize);
+        final MessageHandlerFactory messageHandlerFactory = new MessageHandlerFactory() {
+            @Override
+            public MessageHandler create(MessageContext mc) {
+                return new SmtpConsumer(mc, sessionFactory, port, host, log, maxMessageSize);
+            }
         };
+       /* final MessageHandlerFactory messageHandlerFactory = (final MessageContext mc) -> {
+            return new SmtpConsumer(mc, sessionFactory, port, host, log, maxMessageSize);
+        }; */
+        
+        
         //create smtp server
         final SSLContextService sslContextService = context.getProperty(SSL_CONTEXT_SERVICE).asControllerService(SSLContextService.class);
         final SMTPServer smtpServer = sslContextService == null ? new SMTPServer(messageHandlerFactory) : new SMTPServer(messageHandlerFactory) {

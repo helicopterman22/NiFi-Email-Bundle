@@ -17,6 +17,7 @@
 package org.apache.nifi.processors.email;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -43,6 +44,7 @@ import org.apache.nifi.processor.ProcessContext;
 import org.apache.nifi.processor.ProcessSession;
 import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
+import org.apache.nifi.processor.io.OutputStreamCallback;
 import org.apache.nifi.processor.util.StandardValidators;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -341,17 +343,29 @@ abstract class AbstractEmailProcessor<T extends AbstractMailReceiver> extends Ab
      * Disposes the message by converting it to a {@link FlowFile} transferring
      * it to the REL_SUCCESS relationship.
      */
-    private void transfer(Message emailMessage, ProcessContext context, ProcessSession processSession) {
+    private void transfer(final Message emailMessage, ProcessContext context, ProcessSession processSession) {
         long start = System.nanoTime();
         FlowFile flowFile = processSession.create();
 
-        flowFile = processSession.append(flowFile, out -> {
+       /* flowFile = processSession.append(flowFile, out -> {
             try {
                 emailMessage.writeTo(out);
             } catch (MessagingException e) {
                 throw new IOException(e);
             }
         });
+        */
+        flowFile = processSession.append(flowFile, new OutputStreamCallback() {
+            @Override
+            public void process(final OutputStream out) throws IOException {
+            	 try {
+                     emailMessage.writeTo(out);
+                 } catch (MessagingException e) {
+                     throw new IOException(e);
+                 }
+            }			
+        });
+
 
         long executionDuration = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start);
 

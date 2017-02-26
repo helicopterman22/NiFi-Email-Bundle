@@ -13,23 +13,19 @@ From: 'an unknown organization'
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
   - JavaBeans(TM) Activation Framework (http://java.sun.com/javase/technologies/desktop/javabeans/jaf/index.jsp) javax.activation:activation:jar:1.1.1
     License: COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0  (https://glassfish.dev.java.net/public/CDDLv1.0.html)
-  - Bouncy Castle PKIX, CMS, EAC, TSP, PKCS, OCSP, CMP, and CRMF APIs (http://www.bouncycastle.org/java.html) org.bouncycastle:bcpkix-jdk15on:jar:1.55
-    License: Bouncy Castle Licence  (http://www.bouncycastle.org/licence.html)
-  - Bouncy Castle Provider (http://www.bouncycastle.org/java.html) org.bouncycastle:bcprov-jdk15on:jar:1.55
-    License: Bouncy Castle Licence  (http://www.bouncycastle.org/licence.html)
   - SubEtha SMTP (http://subethasmtp.googlecode.com) org.subethamail:subethasmtp:jar:3.1.7
     License: Apache 2.0  (http://code.google.com/p/subethasmtp/source/browse/trunk/LICENSE.txt)
 
 From: 'Apache NiFi Project' (http://nifi.apache.org/)
-  - nifi-email-processors (http://nifi.apache.org/nifi-nar-bundles/nifi-email-bundle/nifi-email-processors) org.apache.nifi:nifi-email-processors:jar:1.1.1
+  - nifi-email-processors (http://nifi.apache.org/nifi-nar-bundles/nifi-email-bundle/nifi-email-processors) org.apache.nifi:nifi-email-processors:jar:0.7.1
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
-  - nifi-processor-utils (http://nifi.apache.org/nifi-commons/nifi-processor-utils) org.apache.nifi:nifi-processor-utils:jar:1.1.1
+  - nifi-processor-utils (http://nifi.apache.org/nifi-commons/nifi-processor-utils) org.apache.nifi:nifi-processor-utils:jar:0.7.1
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
-  - nifi-security-utils (http://nifi.apache.org/nifi-commons/nifi-security-utils) org.apache.nifi:nifi-security-utils:jar:1.1.1
+  - nifi-security-utils (http://nifi.apache.org/nifi-commons/nifi-security-utils) org.apache.nifi:nifi-security-utils:jar:0.7.1
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
-  - nifi-standard-services-api-nar (http://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-standard-services-api-nar) org.apache.nifi:nifi-standard-services-api-nar:nar:1.1.1
+  - nifi-standard-services-api-nar (http://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-standard-services-api-nar) org.apache.nifi:nifi-standard-services-api-nar:nar:0.7.1
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
-  - nifi-utils (http://nifi.apache.org/nifi-commons/nifi-utils) org.apache.nifi:nifi-utils:jar:1.1.1
+  - nifi-utils (http://nifi.apache.org/nifi-commons/nifi-utils) org.apache.nifi:nifi-utils:jar:0.7.1
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
 
 From: 'Apache Software Foundation' (http://www.apache.org/)
@@ -69,8 +65,8 @@ From: 'SpringIO' (http://spring.io)
 From: 'The Apache Software Foundation' (http://www.apache.org/)
   - Apache Commons Codec (http://commons.apache.org/proper/commons-codec/) commons-codec:commons-codec:jar:1.10
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - Apache Commons IO (http://commons.apache.org/proper/commons-io/) commons-io:commons-io:jar:2.5
-    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons IO (http://commons.apache.org/io/) commons-io:commons-io:jar:2.4
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
   - Apache Commons Logging (http://commons.apache.org/proper/commons-logging/) commons-logging:commons-logging:jar:1.2
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
   - Apache Commons Email (http://commons.apache.org/proper/commons-email/) org.apache.commons:commons-email:jar:1.4
